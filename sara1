@@ -1,1 +1,954 @@
+1.SIMPLE WEB PAGE USING HTML
 
+CODING:
+
+<DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>MP ACADEMY</title>
+
+</head>
+
+<body>
+
+<style>
+
+body{background-color:lavender;}
+
+</style>
+
+<center><h1 style="color:blue;">MASTERS PROFFESIONAL ACADEMY</h1>
+
+<H2>Hard Work/Smart Work/Passion</H2>
+
+<br>
+
+<hr>
+
+<p>Loramso</p>
+
+<img src="url" alt=Academy>
+
+<hr>
+
+<ol>
+
+<li><h3>Mark notes</h3></li>
+
+<li><h3>Make presentation</h3></li>
+
+<li><h3>Make Public Speech</h3></li>
+
+</ol>
+
+<hr>
+
+<a href="https://mectcbe.com/">About</a><br>
+
+<a href="https://www.justdial.com/Coimbatore/Masters-Professional-Academy-Near-
+
+Mahendra Car-Showroom-Avinashi-Road/0422PX422
+
+-X422-220524004127-E2M5_BZDET">Location</a>
+
+
+2.DESIGN WEB PAGE USING CSS
+
+CODING:
+
+Index.html:
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset=”UTF-8">
+
+<title>Student Course Selection</title>
+
+</head>
+
+<body>
+
+<h1><b><center>Course Registration</center></b></h1>
+
+<form action=”course.php” method=”get”>
+
+<Table align=”center”>
+
+<tr> <th>Name</th>
+
+<td>input type=”text” name=”name”></td></tr>
+
+<tr> <th>SSLC Mark </th>
+
+<td>”input type=”number” name=”sslcmrk”></td>
+
+</tr>
+
+<tr> <th>HSC Mark </th><td><input type=”number”name=”hscmrk”></td></tr>
+
+<tr>
+
+<th>Courses</th><td><select name=”course”>
+
+<option value=”Computer Science”>Computer Science</option>
+
+<option value=”Computer Science with Cognitive Systems”>Computer Science with Cognitive
+Systems</option>
+
+<option value=<”Computer Science with Artificial Intelligence”>Computer Science with 
+
+Artificial Intelligence</option>
+
+<option value=”Information Technology”>Information Technology</option>
+
+<option value=”B.Sc CS with cyber security”>B.Sc CS with cyber security</option></td></tr>
+
+<tr><td><input type=”submit” name=”submit”></td></tr>
+
+</Table></form><body></html> 
+
+Course.php:
+
+<?php
+
+$name=$_GET[“name”];
+
+$sslc=$_GET[“sslcmr”];
+
+$hsc=$_GET[“hscmrk”];
+
+$course=$_GET[“course”];
+
+echo “<b>NAME:</b>”.$name.”<br>”;
+
+echo “<b>SSLC MARK:</b>”.$sslc.”<br>”; 
+
+echo “<b>HSC MARK:</b>”.$hsc.”<br>”;
+
+echo “<b>COURSE SELECTED:</b>”.$course.”<br>”;
+
+?>
+
+
+
+
+3. CONTROL STRUCTURE AND LOOPS IN PHP
+
+CODING:
+
+<html>
+
+<head
+
+<meta charset=”UTF-8&”>
+
+<meta name=”viewport” content=”width=device-width, initial-
+
+scale=1.0”>
+
+<title>Bank Transactions</title>
+
+</head>
+
+<body>
+
+<h2>Bank Transactions</h2>
+
+<form method=”post” action=”<?php echo 
+
+htmlspecialchars($_SERVER[“PHP_SELF”]); ?>”>
+
+<label for=”initialBalance”>Initial Balance:</label>
+
+“input type=”number”name=”initialBalance<required><br><br>
+
+<label for=”numTransactions”>Number of Transactions:</label>
+
+<input type=”number” name=”numTransactions”required><br><br>
+
+<label for=”transactionType”>Transaction Type:</label>
+
+<select name=”transactionType” required>
+
+<option value=”deposi”<Deposit>/option>
+
+<option value=”withdraw”>Withdraw</option>
+
+</select><br><br>
+<label for=”amount”>Amount:</label>
+
+<input type=”number”name=”amount”required><br><br>
+
+<input type=”submit” value=”Perform Transactions”>
+
+</form>
+
+<?php
+
+if ($_SERVER[“REQUEST_METHOD”] == “POST”) {
+
+$iBalance = $_POST[“initialBalance”];
+
+$numT = $_POST[“numTransactions”];
+
+$tranType = $_POST[“transactionType”];
+
+$amt = $_POST[“amount”];
+
+echo “<h3>Transaction Results:</h3>”; 
+
+echo “<p>Initial Balance: $iBalance</p>”; 
+
+for ($i = 1; $i &lt;= $numT; $i++) {
+
+echo “<p>Transaction $i:</p>”; 
+
+switch ($tranType) {
+
+case “deposit”:
+
+$iBalance += $amt;
+
+echo “<p>Deposit: +$amt</p>”; 
+
+break;
+
+case “withdraw”:
+
+if ($amt <= $iBalance) {
+
+$iBalance -= $amt; 
+
+Echo"<p>Withdrawal: -$amt</p>”;
+
+} else {
+echo “<p style=’color: red;’>Insufficient funds for withdrawal!</p>”;
+
+}
+
+break; 
+
+default:
+
+echo “<p style=’color: red;’>Invalid transaction type!</p>”;
+
+}
+
+}
+
+echo “<p>Final Balance: $iBalance</p>”;
+
+}
+
+?>
+
+</body>
+
+</html>
+
+
+
+4. STRING FUNCTION IN PHP
+
+CODING:
+
+<?php 
+
+if(isset($_POST['disp']))
+
+{
+
+$s=$_POST['s'];
+
+$ch=$_POST['ch']; 
+
+switch($ch)
+
+{
+
+case 'STRING LENGTH':
+
+$res= strlen($s); 
+
+break;
+
+case 'WORD COUNT':
+
+$res= str_word_count($s); 
+
+break;
+
+case 'STRING REVERSE':
+
+$res=strrev($s); 
+
+break;
+
+case 'POSITION OF A CHARACTER':
+
+$res=strpos($s,"a"); 
+
+break;
+
+case 'STRING REPLACE':
+
+$res=str_replace($s,"hello","world"); 
+
+break;
+case 'STRING SPLIT':
+
+$res=str_split($s,1); 
+
+break;
+
+case 'PASSWORD GENERATOR':
+
+$data="1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+
+$res= substr(str_shuffle($data),0,7); 
+
+break; }
+
+}
+
+?>
+
+<html>
+
+<body bgcolor="cyan">
+
+<form action="" method="post">
+
+<table align="center" border="3" width="20%"><br><br>
+
+<tr bgcolor="forestgreen"><td align="center" colspan="2">
+
+<font color="white" face="arial black" size="5">STRING HANDLING</font></td></tr>
+
+<tr><td><input type="button" value="Enter String"></td>
+
+<td><input type="text" name="s"></td></tr>
+
+<tr><td><input type="button" value="Select Your Choice"></td>
+
+<td><center><select name="ch">
+
+<option>STRING LENGTH</option>
+
+<option>WORD COUNT</option>
+
+<option>STRING REVERSE</option>
+
+<option>POSITION OF A CHARACTER</option>
+
+<option>STRING REPLACE</option>
+<option>STRING SPLIT</option>
+
+<option>PASSWORD GENERATOR</option>
+
+</center></select></td></tr>
+
+<tr><td><input type="submit" value=" RESULT " name="disp"></td>
+
+<td><input type="text" value="<?php echo @$res; ?>" readonly="true"/>
+
+</td></tr></table>
+
+</body></html>
+
+
+
+5. ARRAYS FUNCTION IN PHP
+
+CODING:
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Array Functions</title>
+
+</head>
+
+<body>
+
+<?php
+
+// Function to display array elements 
+
+function displayArray($array) { 
+
+echo "<ul>";
+
+foreach ($array as $value) { 
+
+echo "<li>$value</li>";
+
+}
+
+echo "</ul>";
+
+}
+
+// Function to find the largest value in an array 
+
+function findLargest($array) {
+
+$largest = $array[0]; 
+
+foreach ($array as $value) { 
+
+if ($value > $largest) {
+
+$largest = $value;
+
+}
+
+}
+return $largest;
+
+}
+
+// Check if the form has been submitted 
+
+if (isset($_POST['submit'])) {
+
+// Get the user's input
+
+$numbers = explode(",", $_POST['numbers']);
+
+// Perform array operations
+
+echo "<h2>Original Array:</h2>"; 
+
+displayArray($numbers);
+
+echo "<h2>Sorted Array:</h2>"; 
+
+sort($numbers); 
+
+displayArray($numbers);
+
+echo "<h2>Largest Value:</h2>"; 
+
+echo findLargest($numbers);
+
+} else {
+
+// Display the form if it hasn't been submitted yet
+
+?>
+
+<h1>Enter Numbers</h1>
+
+<form method="post" action="">
+
+<label for="numbers">Enter numbers separated by commas:</label><br>
+
+<input type="text" id="numbers" name="numbers"><br><br>
+
+<input type="submit" name="submit" value="Submit">
+
+</form>
+
+<?php
+
+}
+
+?>
+
+</body>
+
+</html>
+
+
+
+
+6. FORM HANDLING IN PHP
+
+CODING:
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Form Handling</title>
+
+</head>
+
+<body>
+
+<?php
+
+// Check if the form has been submitted 
+
+if (isset($_POST['submit'])) {
+
+// Get the user's input
+
+$name = $_POST['name'];
+
+$email = $_POST['email'];
+
+$message = $_POST['message'];
+
+// Display the submitted data
+
+echo "<h2>Your Information</h2>"; 
+
+echo "Name: $name<br>";
+
+echo "Email: $email<br>";
+
+echo "Message: $message<br>";
+
+} else {
+
+// Display the form if it hasn't been submitted yet
+
+?>
+
+<h1>Contact Form</h1>
+
+<form method="post" action="">
+
+<label for="name">Name:</label><br>
+<input type="text" id="name" name="name"><br><br>
+
+<label for="email">Email:</label><br>
+
+<input type="email" id="email" name="email"><br><br>
+
+<label for="message">Message:</label><br>
+
+<textarea id="message" name="message" rows="5" cols="40"></textarea><br><br> <input 
+
+type="submit" name="submit" value="Submit">
+
+</form>
+
+<?php
+
+}
+
+?>
+
+</body>
+
+</html>
+
+
+
+
+7. SERVER-SIDE VALIDATION &PAGE REDIRECTION IN PHP
+
+CODING:
+
+<?php 
+
+if(isset($_POST['Submit'])){
+
+$emp_name=trim($_POST["emp_name"]);
+
+$emp_number=trim($_POST["emp_number"]);
+
+$emp_email=trim($_POST["emp_email"]); 
+
+if(!isset($emp_name) || $emp_name==""){
+
+$errorMsg= "error: You did not enter a name.";
+
+$code="1";
+
+}
+
+elseif($emp_number==""){
+
+$errorMsg= "error: Please enter number.";
+
+$code="2";
+
+}
+
+elseif(is_numeric(trim($emp_number))== false) {
+
+$errorMsg= "error: Please enter numeric value.";
+
+$code="2";
+
+}
+
+elseif(strlen($emp_number)<10){
+
+$errorMsg= "error: Number should be ten digits.";
+
+$code="2";
+
+}
+
+elseif($emp_email==""){
+
+$errorMsg= "error: You did not enter a email.";
+
+$code="3";
+
+}
+elseif(!preg_match("/^[0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,6}$/i",
+
+$emp_email)){
+
+$errorMsg='error: You did not enter a valid email.';
+
+$code="3";
+
+}
+
+else{
+
+echo "Success";
+
+}
+
+}
+
+?>
+
+<html>
+
+<head>
+
+<meta charset="utf-8">
+
+<title>Employee Information Sample HTML Form</title>
+
+<style type="text/css">
+
+.errorMsg {border:1px solid red; }
+
+.message {color: red; font-weight:bold;}
+
+</style>
+
+</head>
+
+<body>
+
+<?php
+
+if (isset($errorMsg))
+
+{
+
+echo "<p class='message'>" .$errorMsg. "</p>";
+
+}
+
+?>
+
+<form name="registration" id="registration" method="post" action=""> <table width="400" 
+
+border="0" align="center" cellpadding= "4" cellspacing="1"> <tr>
+
+<td>Employee Name:</td>
+
+<td><input name="emp_name" type="text" id="emp_name" value="<?php 
+
+if(isset($emp_name)) {echo $emp_name;} ?>"
+
+<?php if(isset($code) && $code ==1) { echo "class=errorMsg" ;} ?>></td> </tr>
+<tr>
+
+<td>Contact No.: </td>
+
+<td><input name="emp_number" type="text" id="emp_number" value="<?php 
+
+if(isset($emp_number)) {echo $emp_number;} ?>"
+
+<?php if(isset($code) && $code== 2) { echo "class=errorMsg";}?>></td> </tr>
+
+<tr>
+
+<td> Personal Email: </td>
+
+<td><input name="emp_email" type="text" id="emp_email" value="<?php 
+
+if(isset($emp_email)) {echo $emp_email; } ?>"
+
+<?php if(isset($code) && $code == 3) { echo "class=errorMsg" ;} ?>></td> </tr>
+
+<tr>
+
+<td></td>
+
+<td><input type="submit" name="Submit" value="Submit"></td> </tr>
+
+</table>
+
+</form>
+
+</body>
+
+</html>
+
+
+
+
+8.COOKIES & SESSIONS IN PHP
+
+CODING :
+
+<?php 
+
+if(!isset($_COOKIE['visits']))$_COOKIE['visits']=0;
+
+$visits=$_COOKIE['visits']+1; 
+
+setcookie('visits',$visits,time()+3600*24*365);
+
+?>
+
+<html>
+
+<head><style type="text/css">
+
+div{font-size:20pt;color:navy;font-family:arial black;width:50%;background-color:white} 
+
+p{font-size:18pt;color:lime;font-weight:bold;text-align:center;font-
+
+family:bauhus93} .groove{border-style:groove}
+
+.dotted{border-style:dotted}
+
+</style>
+
+</head>
+
+<body bgcolor="salmon">
+
+<?php
+
+echo'<br><br><center><div class="groove">HIT COUNTER USING COOKIES</div><br>'; 
+
+echo'<div class="dotted">';
+
+if($visits>1){
+
+echo"<p>This is visit number $visits</p>";} 
+
+else {
+
+echo'<p>Welcome to my Website! Click here for a tour!</p>';} echo"<br></center></div>";
+
+?>
+
+</body>
+
+</html>
+
+
+
+9.FILE UPLOADING IN PHP
+
+CODING:
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset = "ISO-8859-1">
+
+<title>Image Upload</title>
+
+</head>
+
+<body>
+
+<h2>Upload an Image</h2>
+
+<form action = "upload.php" method = "post" enctype = "multipart/form-data">
+
+<input type = "file" name = "image" id = "image">
+
+<input type = "Submit" name = "Upload Image" id = "Submit">
+
+</form>
+
+</body>
+
+</html>
+
+<?php
+
+$image_file = $_FILES["image"];
+
+if (!isset($image_file)) {
+
+die('No file uploaded.');
+
+}
+
+$upload_path = "D:/PHP01/" . basename($image_file["name"]);
+
+if (move_uploaded_file($image_file["tmp_name"], $upload_path)) {
+
+echo 'File uploaded successfully: ' . htmlspecialchars($image_file["name"]);
+
+} else {
+
+echo 'File upload failed.';
+
+}
+
+?>
+
+
+
+10.PHP DATABASE CONNECTIVITY WITH MYSQL
+
+CODING:
+
+<?php
+
+$host= "127.0.0.1:3307";
+
+$username="root";
+
+$password= "";
+
+$database="login_page";
+
+$conn=new mysqli($host, $username, $password, $database);
+
+if($conn->connect_error)
+
+{
+
+die("connection falied:".$conn->connection_error);
+
+}
+
+if($_SERVER["REQUEST_METHOD"]=="POST"){
+
+$Username=$_POST["Username"];
+
+$Password=$_POST["Password"];
+
+$sql="INSERT INTO Student(Username,Password) VALUES('$Username','$Password')";
+
+if($conn->query($sql)==TRUE){
+
+echo "Student Logged in successfully";
+
+}
+
+else{
+
+echo "Error".$sql."<br>".$conn->error;
+
+}
+
+}
+
+?>
+
+<html>
+
+<head>
+
+<title>Login Page</title></head>
+
+<body>
+
+<h1>Login page</h1>
+
+<form action="" method="post">
+
+<label for="Username">Username</label>
+
+<input type="text" name="Username" id="Username"><br><br>
+
+<label for="Password">Password</label>
+
+<input type="text" name="Password" id="Password"><br><br>
+
+<input type="submit" value="submit">
+
+</form>
+
+</body>
+
+</html>
+
+
+
+
+11.MYSQL FUNCTIONS
+
+CODING:
+
+<?php
+
+$host= "127.0.0.1:3307";
+
+$username="root"; 
+
+$password= "";
+
+$database="datas";
+
+$conn=new mysqli($host, $username, $password, $database);
+
+if($conn->connect_error) 
+
+{
+
+die("connection falied:".$conn->connection_error);
+
+}
+
+function getAggregateData($conn, $query, $label) {
+
+$result=$conn->query($query);
+
+$row=$result->fetch_assoc(); 
+
+echo "$label:" .$row[array_key_first($row)]."<br>";
+
+}
+
+getAggregateData($conn, "SELECT COUNT(*) AS total_users FROM Student1", "Total 
+
+Users");
+
+getAggregateData($conn, "SELECT SUM(salary) AS total_salary FROM Student1", "Total 
+
+Salary");
+
+getAggregateData($conn, "SELECT AVG(salary) AS average_salary FROM Student1", 
+
+"Average Salary");
+
+getAggregateData($conn, "SELECT MAX(salary) AS max_salary FROM Student1",
+
+"Maximum Salary");
+
+getAggregateData($conn, "SELECT MIN(salary) AS min_salary FROM Student1", "Minimum 
+
+Salary");
+
+$conn->close();
+
+?>
